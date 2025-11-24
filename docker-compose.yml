@@ -21,6 +21,8 @@ services:
       - db:/var/lib/postgresql/data
 
   app:
+    build:
+      context: .
     depends_on:
       db:
         condition: service_healthy
@@ -40,6 +42,10 @@ services:
     volumes:
       - data:/srv/umap/uploads
       - static:/srv/umap/static
+      # - ./umap:/srv/umap/umap:ro
+    # command: ["umap", "runserver", "0.0.0.0:8000"]
+    # ports:
+    #   - "8080:8000"
 
   proxy:
     image: nginx:latest
