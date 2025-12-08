@@ -36,6 +36,7 @@ services:
       - SECRET_KEY=some-long-and-weirdly-unrandom-secret-key
       - SITE_URL=https://umap.mingaabierta.org/
       - ALLOWED_HOSTS=umap.mingaabierta.org,84.247.182.29
+      - CSRF_TRUSTED_ORIGINS=https://umap.mingaabierta.org
       - UMAP_ALLOW_ANONYMOUS=True
       - DEBUG=1
       - REALTIME_ENABLED=1
