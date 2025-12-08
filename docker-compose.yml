@@ -30,6 +30,7 @@ services:
         condition: service_healthy
     image: umap/umap:3.0.2
     environment:
+      - DJANGO_SETTINGS_MODULE=umap.settings.prod
       - STATIC_ROOT=/srv/umap/static
       - MEDIA_ROOT=/srv/umap/uploads
       - DATABASE_URL=postgis://postgres@db/postgres
@@ -38,7 +39,6 @@ services:
       - ALLOWED_HOSTS=umap.mingaabierta.org,84.247.182.29
       - CSRF_TRUSTED_ORIGINS=https://umap.mingaabierta.org
       - UMAP_ALLOW_ANONYMOUS=True
-      - DEBUG=1
       - REALTIME_ENABLED=1
       - REDIS_URL=redis://redis:6379
       - SOCIAL_AUTH_OPENSTREETMAP_OAUTH2_KEY=k1krSU2x8GYwdGruapSjkIS6KKAHe5JJbAsEa-xK8Js
